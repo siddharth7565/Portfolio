@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddharth Upadhayay | Software Engineer Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Siddharth Upadhayay, a Computer Science student specializing in C++, DSA, and Full Stack Web Development.">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&family=Caveat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <div class="aurora-container">
+        <div class="aurora-blur aurora-1"></div>
+        <div class="aurora-blur aurora-2"></div>
+        <div class="aurora-blur aurora-3"></div>
+    </div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline">
+        <span class="cursor-text"></span>
+    </div>
+    <div class="cursor-glow"></div>
+    <div class="grain-overlay"></div>
+
+    <nav id="navbar">
+        <div class="nav-content">
+            <a href="#home" class="logo" aria-label="Go to home">
+                <span class="logo-main" aria-hidden="true">
+                    <span class="logo-orbit-wrap">
+                        <span class="logo-text-main">su</span>
+                        <div class="portal-ring ring-1"></div>
+                        <div class="portal-ring ring-2"></div>
+                        <div class="portal-ring ring-3"></div>
+                    </span>
+                </span>
+                <span class="logo-sub">Software Engineer</span>
+            </a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#highlights">Highlights</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Education</a>
+                <a href="RESUME.pdf" download>Resume</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-controls">
+                <div id="theme-toggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge reveal-text">
+                        <span>Open to internships &amp; SDE roles</span>
+                    </div>
+                    <h2 class="reveal-text delay-1">Hi, I am</h2>
+                    <h1 class="reveal-text delay-2">Siddharth Upadhayay<span>.</span></h1>
+                    <p class="hero-main-tagline reveal-text delay-2">Software Engineer | C++ & Full Stack Developer</p>
+                    <p class="hero-subtitle"><span id="typing-text"></span><span class="type-cursor">|</span></p>
+                    <div class="hero-highlights reveal-text delay-2">
+                        <span class="highlight-item"><i class="fas fa-code"></i> 300+ DSA Problems</span>
+                        <span class="highlight-separator">|</span>
+                        <span class="highlight-item"><i class="fab fa-github"></i> Active on GitHub</span>
+                        <span class="highlight-separator">|</span>
+                        <span class="highlight-item"><i class="fas fa-briefcase"></i> Open to Internship</span>
+                    </div>
+                    <div class="hero-btns reveal-text delay-3">
+                        <a href="#projects" class="btn primary">Check my work</a>
+                        <a href="RESUME.pdf" download class="btn secondary"><i class="fas fa-download"></i> Resume</a>
+                        <a href="#contact" class="btn secondary">Say hello!</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="blob-shape"></div>
+                    <div class="hero-note">Yes, I'm a real person <i class="fas fa-hand-point-left"></i></div>
+                </div>
+            </div>
+            <div class="hero-background-text" aria-hidden="true">
+                CONSISTENCY BEATS TALENT
+            </div>
+            <div class="scroll-down">
+                <span>Scroll Down</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <section id="services" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">What I Do</h2>
+                <div class="bento-grid">
+                    <div class="bento-item large">
+                        <div class="bento-content">
+                            <div class="bento-icon"><i class="fas fa-brain"></i></div>
+                            <h3>DSA & Problem Solving</h3>
+                            <p>I regularly solve problems in C++ to sharpen my understanding of data structures,
+                                algorithms, and optimization techniques. Expert in breaking down complex logic into
+                                efficient code.</p>
+                            <div class="bento-tags">
+                                <span>C++</span>
+                                <span>Algorithms</span>
+                                <span>Logic</span>
+                            </div>
+                        </div>
+                        <div class="bento-spotlight"></div>
+                    </div>
+                    <div class="bento-item medium">
+                        <div class="bento-content">
+                            <div class="bento-icon"><i class="fas fa-code"></i></div>
+                            <h3>Full Stack Development</h3>
+                            <p>Building clean, responsive web applications using modern stacks like React, Node.js, and
+                                MySQL. Focused on performance and modular architecture.</p>
+                        </div>
+                        <div class="bento-spotlight"></div>
+                    </div>
+                    <div class="bento-item wide">
+                        <div class="bento-content">
+                            <div class="bento-icon"><i class="fas fa-rocket"></i></div>
+                            <h3>Continuous Learning</h3>
+                            <p>Always exploring new technologies, from system design to cloud architecture. I thrive on
+                                staying ahead of the curve.</p>
+                        </div>
+                        <div class="bento-spotlight"></div>
+                    </div>
+                    <div class="bento-item small">
+                        <div class="bento-content">
+                            <div class="bento-icon"><i class="fas fa-shield-alt"></i></div>
+                            <h3>Security First</h3>
+                            <p>Advocating for secure coding practices and trust-based systems in rental platforms.</p>
+                        </div>
+                        <div class="bento-spotlight"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>I strongly believe that <strong>consistency is more powerful than talent</strong>. I dedicate
+                            myself to continuous improvement by practicing Data Structures and Algorithms, building
+                            real-world projects, and deepening my understanding of core programming principles.</p>
+                        <p>As a Computer Science student with a solid foundation in C++ and problem-solving, I enjoy
+                            breaking down complex problems and writing efficient, optimized solutions. I actively
+                            enhance my logical thinking skills through consistent coding practice on platforms like
+                            LeetCode.</p>
+                        <p>My long-term goal is to become a skilled software engineer capable of designing scalable and
+                            efficient systems.</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <h3>B.Tech</h3>
+                            <p>Computer Science</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>DSA</h3>
+                            <p>C++ Expert</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights Section -->
+        <section id="highlights" class="section">
+            <div class="container">
+                <h2 class="section-title">Highlights</h2>
+                <div class="highlights-grid">
+                    <div class="highlight-card">
+                        <div class="highlight-icon"><i class="fas fa-code"></i></div>
+                        <h3>Clean, efficient code</h3>
+                        <p>I focus on writing readable solutions with strong fundamentals in C++ and core CS concepts.
+                        </p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon"><i class="fas fa-diagram-project"></i></div>
+                        <h3>Projects with real value</h3>
+                        <p>I build projects that solve problems, with attention to UI, performance, and reliability.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon"><i class="fas fa-bolt"></i></div>
+                        <h3>Fast learner</h3>
+                        <p>I pick up new tools quickly and enjoy improving through consistent practice.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon"><i class="fas fa-users"></i></div>
+                        <h3>Team-friendly</h3>
+                        <p>I communicate clearly, document decisions, and enjoy collaborating on structured workflows.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Languages</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-info"><span>C++</span><span>(Advanced)</span></div>
+                                <div class="progress-line"><span style="width: 95%;"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>Java</span><span>(Intermediate)</span></div>
+                                <div class="progress-line"><span style="width: 75%;"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>Python</span><span>(Intermediate)</span></div>
+                                <div class="progress-line"><span style="width: 70%;"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-laptop-code"></i> Web Stack</h3>
+                        <div class="skill-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>ReactJS</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-database"></i> Databases</h3>
+                        <div class="skill-tags">
+                            <span>MySQL</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-tools"></i> Tools</h3>
+                        <div class="skill-tags">
+                            <span>Git</span>
+                            <span>GitHub</span>
+                            <span>VS Code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <!-- Image would go here -->
+                            <div class="image-placeholder">
+                                <i class="fas fa-newspaper"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Fake News Detection</h3>
+                            <p>Machine Learning project designed to identify and flag deceptive information in news
+                                articles.</p>
+                            <div class="project-meta">
+                                <span>Role: Solo Developer</span>
+                                <span>Focus: Machine Learning</span>
+                            </div>
+                            <ul class="project-points">
+                                <li>Processed and vectorized text to train a classification model.</li>
+                                <li>Focused on accuracy and avoiding overfitting with clean evaluation.</li>
+                            </ul>
+                            <div class="project-tags">
+                                <span>ML</span>
+                                <span>Python</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Secure Rental Platform</h3>
+                            <p>Developing a secure environment for property rentals with built-in trust mechanisms.</p>
+                            <div class="project-meta">
+                                <span>Role: Team Project</span>
+                                <span>Focus: Security</span>
+                            </div>
+                            <ul class="project-points">
+                                <li>Designed a structured rental flow with user-friendly UI.</li>
+                                <li>Planned trust and verification features to reduce fraud.</li>
+                            </ul>
+                            <div class="project-tags">
+                                <span>Node.js</span>
+                                <span>React</span>
+                                <span>Security</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section id="experience" class="section bg-light">
+            <div class="container">
+                <div class="dual-grid">
+                    <div class="education-side">
+                        <h2 class="section-title">Education</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3>B.Tech - Computer Science</h3>
+                                    <p class="org">Sharda University</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3>Highschool - Computer Science</h3>
+                                    <p class="org">Saraswati Vidhya Mandir</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="certs-side">
+                        <h2 class="section-title">Certifications</h2>
+                        <div class="cert-card">
+                            <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                            <div class="cert-info">
+                                <h3>Full Stack Web Development</h3>
+                                <p>Udemy Certificate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-card">
+                    <p>I'm always open to new opportunities and collaborations.</p>
+                    <div class="contact-links">
+                        <a href="mailto:siddharthupadhayay2@gmail.com" class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>siddharthupadhayay2@gmail.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/siddharth-upadhayay" target="_blank" class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                        <a href="https://github.com/siddharth7565" target="_blank" class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub Profile</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> <span class="handwritten">Siddharth Upadhayay</span>. Made with ❤️ and
+                curiosity.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Back to top" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
