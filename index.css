@@ -68,7 +68,7 @@ button:focus-visible,
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif;
     background-color: var(--bg-dark);
     background-image:
         radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 45%),
