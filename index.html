@@ -23,12 +23,10 @@
         <div class="aurora-blur aurora-2"></div>
         <div class="aurora-blur aurora-3"></div>
     </div>
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline">
-        <span class="cursor-text"></span>
+    <div class="custom-cursor">
+        <div class="cursor-circle"></div>
+        <div class="cursor-dot"></div>
     </div>
-    <div class="cursor-glow"></div>
-    <div class="grain-overlay"></div>
 
     <nav id="navbar">
         <div class="nav-content">
@@ -41,14 +39,14 @@
                         <div class="portal-ring ring-3"></div>
                     </span>
                 </span>
-                <span class="logo-sub">Software Engineer</span>
+                <span class="logo-sub">FULL-STACK &amp; AI</span>
             </a>
             <div class="nav-links">
                 <a href="#about">About</a>
-                <a href="#highlights">Highlights</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
-                <a href="#experience">Education</a>
+                <a href="#experience">Experience</a>
+                <a href="#profiles">Profiles</a>
                 <a href="RESUME.pdf" download>Resume</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -70,28 +68,35 @@
             <div class="hero-container">
                 <div class="hero-content">
                     <div class="hero-badge reveal-text">
-                        <span>Open to internships &amp; SDE roles</span>
+                        <span>OPEN TO SDE ROLES &amp; INTERNSHIPS</span>
                     </div>
                     <h2 class="reveal-text delay-1">Hi, I am</h2>
                     <h1 class="reveal-text delay-2">Siddharth Upadhayay<span>.</span></h1>
-                    <p class="hero-main-tagline reveal-text delay-2">Software Engineer | C++ & Full Stack Developer</p>
-                    <p class="hero-subtitle"><span id="typing-text"></span><span class="type-cursor">|</span></p>
+                    <p class="hero-main-tagline reveal-text delay-2">Full-Stack Web Developer | AI Enthusiast</p>
+                    <p class="hero-subtitle reveal-text delay-2"><span id="typing-text"></span><span class="type-cursor">|</span></p>
+                    <p class="hero-intro reveal-text delay-2">I'm a Computer Science undergraduate who builds full-stack web apps and AI-powered systems. From MERN applications to RAG pipelines with LLM integration, I focus on turning complex problems into reliable, user-focused products. Currently looking for SDE and full-stack internship opportunities.</p>
                     <div class="hero-highlights reveal-text delay-2">
-                        <span class="highlight-item"><i class="fas fa-code"></i> 300+ DSA Problems</span>
+                        <span class="highlight-item"><i class="fas fa-layer-group"></i> Full-Stack Development</span>
                         <span class="highlight-separator">|</span>
-                        <span class="highlight-item"><i class="fab fa-github"></i> Active on GitHub</span>
+                        <span class="highlight-item"><i class="fas fa-brain"></i> RAG &amp; LLM Systems</span>
                         <span class="highlight-separator">|</span>
-                        <span class="highlight-item"><i class="fas fa-briefcase"></i> Open to Internship</span>
+                        <span class="highlight-item"><i class="fas fa-code"></i> DSA in C++</span>
                     </div>
                     <div class="hero-btns reveal-text delay-3">
-                        <a href="#projects" class="btn primary">Check my work</a>
-                        <a href="RESUME.pdf" download class="btn secondary"><i class="fas fa-download"></i> Resume</a>
-                        <a href="#contact" class="btn secondary">Say hello!</a>
+                        <a href="#projects" class="btn primary">View Projects</a>
+                        <a href="RESUME.pdf" download class="btn secondary"><i class="fas fa-download"></i> Download Resume</a>
+                        <a href="https://github.com/siddharth7565" target="_blank" class="btn secondary"><i class="fab fa-github"></i> GitHub</a>
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <div class="blob-shape"></div>
-                    <div class="hero-note">Yes, I'm a real person <i class="fas fa-hand-point-left"></i></div>
+                    <div class="profile-photo-container">
+                        <div class="profile-glow-ring ring-1"></div>
+                        <div class="profile-glow-ring ring-2"></div>
+                        <div class="profile-glow-ring ring-3"></div>
+                        <div class="profile-image">
+                            <img src="./WhatsApp Image 2026-07-25 at 3.13.27 PM.jpeg" alt="Siddharth Upadhayay" />
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="hero-background-text" aria-hidden="true">
@@ -182,44 +187,13 @@
             </div>
         </section>
 
-        <!-- Highlights Section -->
-        <section id="highlights" class="section">
-            <div class="container">
-                <h2 class="section-title">Highlights</h2>
-                <div class="highlights-grid">
-                    <div class="highlight-card">
-                        <div class="highlight-icon"><i class="fas fa-code"></i></div>
-                        <h3>Clean, efficient code</h3>
-                        <p>I focus on writing readable solutions with strong fundamentals in C++ and core CS concepts.
-                        </p>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="highlight-icon"><i class="fas fa-diagram-project"></i></div>
-                        <h3>Projects with real value</h3>
-                        <p>I build projects that solve problems, with attention to UI, performance, and reliability.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="highlight-icon"><i class="fas fa-bolt"></i></div>
-                        <h3>Fast learner</h3>
-                        <p>I pick up new tools quickly and enjoy improving through consistent practice.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="highlight-icon"><i class="fas fa-users"></i></div>
-                        <h3>Team-friendly</h3>
-                        <p>I communicate clearly, document decisions, and enjoy collaborating on structured workflows.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Skills Section -->
         <section id="skills" class="section bg-light">
             <div class="container">
                 <h2 class="section-title">Technical Skills</h2>
                 <div class="skills-grid">
                     <div class="skill-category">
-                        <h3><i class="fas fa-code"></i> Languages</h3>
+                        <h3><i class="fas fa-code"></i> Programming Languages</h3>
                         <div class="skill-list">
                             <div class="skill-item">
                                 <div class="skill-info"><span>C++</span><span>(Advanced)</span></div>
@@ -233,10 +207,14 @@
                                 <div class="skill-info"><span>Python</span><span>(Intermediate)</span></div>
                                 <div class="progress-line"><span style="width: 70%;"></span></div>
                             </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>C</span><span>(Intermediate)</span></div>
+                                <div class="progress-line"><span style="width: 65%;"></span></div>
+                            </div>
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h3><i class="fas fa-laptop-code"></i> Web Stack</h3>
+                        <h3><i class="fas fa-laptop-code"></i> Web Development</h3>
                         <div class="skill-tags">
                             <span>HTML5</span>
                             <span>CSS3</span>
@@ -246,17 +224,24 @@
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h3><i class="fas fa-database"></i> Databases</h3>
+                        <h3><i class="fas fa-brain"></i> AI/ML &amp; RAG</h3>
                         <div class="skill-tags">
-                            <span>MySQL</span>
-                            <span>MongoDB</span>
+                            <span>Python</span>
+                            <span>Embeddings</span>
+                            <span>Vector Search</span>
+                            <span>LLM Integration</span>
+                            <span>RAG Systems</span>
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h3><i class="fas fa-tools"></i> Tools</h3>
+                        <h3><i class="fas fa-database"></i> Databases &amp; Tools</h3>
                         <div class="skill-tags">
+                            <span>PostgreSQL</span>
+                            <span>MySQL</span>
+                            <span>MongoDB</span>
                             <span>Git</span>
                             <span>GitHub</span>
+                            <span>Docker</span>
                             <span>VS Code</span>
                         </div>
                     </div>
@@ -271,50 +256,97 @@
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-image">
-                            <!-- Image would go here -->
                             <div class="image-placeholder">
-                                <i class="fas fa-newspaper"></i>
+                                <i class="fas fa-calculator"></i>
                             </div>
                         </div>
                         <div class="project-info">
-                            <h3>Fake News Detection</h3>
-                            <p>Machine Learning project designed to identify and flag deceptive information in news
-                                articles.</p>
+                            <h3>LedgerIQ</h3>
+                            <p>A comprehensive financial management and ledger system for tracking expenses, income, and financial analytics.</p>
                             <div class="project-meta">
-                                <span>Role: Solo Developer</span>
-                                <span>Focus: Machine Learning</span>
+                                <span><i class="fas fa-layer-group"></i> Role: Full-Stack Developer</span>
+                                <span><i class="fas fa-compass"></i> Focus: Finance Tech</span>
                             </div>
                             <ul class="project-points">
-                                <li>Processed and vectorized text to train a classification model.</li>
-                                <li>Focused on accuracy and avoiding overfitting with clean evaluation.</li>
+                                <li>Built a responsive dashboard with real-time financial tracking and visualization.</li>
+                                <li>Implemented secure data storage and user authentication for financial data.</li>
                             </ul>
                             <div class="project-tags">
-                                <span>ML</span>
-                                <span>Python</span>
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>Database</span>
                             </div>
                         </div>
                     </div>
                     <div class="project-card">
                         <div class="project-image">
                             <div class="image-placeholder">
-                                <i class="fas fa-shield-alt"></i>
+                                <i class="fas fa-file-invoice"></i>
                             </div>
                         </div>
                         <div class="project-info">
-                            <h3>Secure Rental Platform</h3>
-                            <p>Developing a secure environment for property rentals with built-in trust mechanisms.</p>
+                            <h3>GST Sahayak</h3>
+                            <p>An intelligent GST calculation and compliance assistant for businesses to simplify tax calculations and filing.</p>
                             <div class="project-meta">
-                                <span>Role: Team Project</span>
-                                <span>Focus: Security</span>
+                                <span><i class="fas fa-layer-group"></i> Role: Full-Stack Developer</span>
+                                <span><i class="fas fa-compass"></i> Focus: FinTech</span>
                             </div>
                             <ul class="project-points">
-                                <li>Designed a structured rental flow with user-friendly UI.</li>
-                                <li>Planned trust and verification features to reduce fraud.</li>
+                                <li>Automated GST calculations with accurate tax slab detection.</li>
+                                <li>Created an intuitive interface for invoice generation and tax reporting.</li>
                             </ul>
                             <div class="project-tags">
-                                <span>Node.js</span>
-                                <span>React</span>
-                                <span>Security</span>
+                                <span>JavaScript</span>
+                                <span>Tax API</span>
+                                <span>UI/UX</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>AI Code Explainer</h3>
+                            <p>An AI-powered tool that explains code snippets and programming concepts using natural language processing.</p>
+                            <div class="project-meta">
+                                <span><i class="fas fa-brain"></i> Role: AI Developer</span>
+                                <span><i class="fas fa-compass"></i> Focus: AI/ML</span>
+                            </div>
+                            <ul class="project-points">
+                                <li>Integrated LLM APIs for intelligent code explanation and documentation generation.</li>
+                                <li>Built a clean interface for code input and formatted explanations.</li>
+                            </ul>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>LLM</span>
+                                <span>NLP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Portfolio Website</h3>
+                            <p>A modern, responsive personal portfolio website showcasing projects, skills, and professional background.</p>
+                            <div class="project-meta">
+                                <span><i class="fas fa-layer-group"></i> Role: Full-Stack Developer</span>
+                                <span><i class="fas fa-compass"></i> Focus: Web Development</span>
+                            </div>
+                            <ul class="project-points">
+                                <li>Designed a dark-themed UI with smooth animations and particle effects.</li>
+                                <li>Implemented responsive design for optimal viewing across all devices.</li>
+                            </ul>
+                            <div class="project-tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
                             </div>
                         </div>
                     </div>
@@ -325,15 +357,17 @@
         <!-- Education & Certifications -->
         <section id="experience" class="section bg-light">
             <div class="container">
+                <h2 class="section-title">Experience &amp; Education</h2>
                 <div class="dual-grid">
                     <div class="education-side">
-                        <h2 class="section-title">Education</h2>
+                        <h3 class="subsection-title">Education</h3>
                         <div class="timeline">
                             <div class="timeline-item">
                                 <div class="timeline-dot"></div>
                                 <div class="timeline-content">
-                                    <h3>B.Tech - Computer Science</h3>
+                                    <h3>B.Tech - Computer Science and Engineering</h3>
                                     <p class="org">Sharda University</p>
+                                    <p class="date">Current</p>
                                 </div>
                             </div>
                             <div class="timeline-item">
@@ -346,7 +380,7 @@
                         </div>
                     </div>
                     <div class="certs-side">
-                        <h2 class="section-title">Certifications</h2>
+                        <h3 class="subsection-title">Certifications</h3>
                         <div class="cert-card">
                             <div class="cert-icon"><i class="fas fa-certificate"></i></div>
                             <div class="cert-info">
@@ -355,6 +389,27 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profiles Section -->
+        <section id="profiles" class="section">
+            <div class="container">
+                <h2 class="section-title">Profiles</h2>
+                <div class="profiles-grid">
+                    <a href="https://github.com/siddharth7565" target="_blank" class="profile-card">
+                        <div class="profile-icon"><i class="fab fa-github"></i></div>
+                        <h3>GitHub</h3>
+                        <p>@siddharth7565</p>
+                        <span class="profile-link">View Profile <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/siddharth-upadhayay" target="_blank" class="profile-card">
+                        <div class="profile-icon"><i class="fab fa-linkedin"></i></div>
+                        <h3>LinkedIn</h3>
+                        <p>Siddharth Upadhayay</p>
+                        <span class="profile-link">View Profile <i class="fas fa-arrow-right"></i></span>
+                    </a>
                 </div>
             </div>
         </section>

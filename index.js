@@ -2,6 +2,84 @@ document.addEventListener('DOMContentLoaded', () => {
     // Current Year for Footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Smooth Circle Cursor
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+    const isDesktop = window.innerWidth >= 969;
+
+    if (!reduceMotion && finePointer && isDesktop) {
+        const customCursor = document.querySelector('.custom-cursor');
+        const cursorCircle = document.querySelector('.cursor-circle');
+        const cursorDot = document.querySelector('.cursor-dot');
+
+        if (customCursor && cursorCircle && cursorDot) {
+            let mouseX = window.innerWidth / 2;
+            let mouseY = window.innerHeight / 2;
+            let circleX = mouseX;
+            let circleY = mouseY;
+            let dotX = mouseX;
+            let dotY = mouseY;
+
+            // Initialize positions
+            cursorCircle.style.left = circleX + 'px';
+            cursorCircle.style.top = circleY + 'px';
+            cursorDot.style.left = dotX + 'px';
+            cursorDot.style.top = dotY + 'px';
+
+            // Mouse move event listener
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            // Linear interpolation for smooth trailing
+            const lerp = (start, end, factor) => start + (end - start) * factor;
+
+            // Animation loop
+            const animateCursor = () => {
+                // Circle follows with slight delay (smooth trailing)
+                circleX = lerp(circleX, mouseX, 0.15);
+                circleY = lerp(circleY, mouseY, 0.15);
+
+                // Dot follows more quickly
+                dotX = lerp(dotX, mouseX, 0.4);
+                dotY = lerp(dotY, mouseY, 0.4);
+
+                // Update positions
+                cursorCircle.style.left = circleX + 'px';
+                cursorCircle.style.top = circleY + 'px';
+                cursorDot.style.left = dotX + 'px';
+                cursorDot.style.top = dotY + 'px';
+
+                requestAnimationFrame(animateCursor);
+            };
+
+            // Start animation
+            animateCursor();
+
+            // Hover effects on interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, .btn, .mobile-menu-btn, .contact-item, .project-card, .profile-card, .skill-category, .bento-item, .highlight-card');
+
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    document.body.classList.add('cursor-hover');
+                });
+                el.addEventListener('mouseleave', () => {
+                    document.body.classList.remove('cursor-hover');
+                });
+            });
+
+            // Hide cursor when mouse leaves window
+            document.addEventListener('mouseleave', () => {
+                customCursor.style.opacity = '0';
+            });
+
+            document.addEventListener('mouseenter', () => {
+                customCursor.style.opacity = '1';
+            });
+        }
+    }
+
     // Theme Toggle Logic
     const themeToggle = document.getElementById('theme-toggle');
     const root = document.documentElement;
@@ -29,16 +107,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Typing Effect Logic
     const typingText = document.getElementById('typing-text');
     const phrases = [
-        "I build scalable systems",
-        "I'm a coffee-powered dev",
-        "I love solving complex bugs",
-        "Consistency is my superpower",
-        "Let's create something cool"
+        "Building full-stack MERN applications",
+        "Designing RAG & LLM-powered systems",
+        "Solving problems with DSA in C++",
+        "Turning ideas into user-focused products"
     ];
     let phraseIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let typeSpeed = 100;
+    let typeSpeed = 60;
 
     const type = () => {
         const currentPhrase = phrases[phraseIndex];
@@ -46,27 +123,27 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isDeleting) {
             typingText.textContent = currentPhrase.substring(0, charIndex - 1);
             charIndex--;
-            typeSpeed = 50;
+            typeSpeed = 30;
         } else {
             typingText.textContent = currentPhrase.substring(0, charIndex + 1);
             charIndex++;
-            typeSpeed = 100;
+            typeSpeed = 60;
         }
 
         if (!isDeleting && charIndex === currentPhrase.length) {
             isDeleting = true;
-            typeSpeed = 2000; // Pause at end
+            typeSpeed = 1500; // Pause at end
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             phraseIndex = (phraseIndex + 1) % phrases.length;
-            typeSpeed = 500;
+            typeSpeed = 300;
         }
 
         setTimeout(type, typeSpeed);
     };
     type();
 
-    // Animated background (particles + links)
+    // Animated background (particles + links) - Optimized
     const reduceMotionBg = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const coarsePointerBg = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
     const bgCanvas = document.getElementById('bg-canvas');
@@ -99,8 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 bgCanvas.style.height = `${state.h}px`;
                 ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
 
-                // Re-seed particle count proportional to area (capped)
-                const target = Math.max(28, Math.min(80, Math.floor((state.w * state.h) / 28000)));
+                // Slightly increased particle count for better visual
+                const target = Math.max(25, Math.min(55, Math.floor((state.w * state.h) / 35000)));
                 while (state.particles.length < target) addParticle();
                 while (state.particles.length > target) state.particles.pop();
             };
@@ -116,10 +193,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 state.particles.push({
                     x: rand(0, state.w),
                     y: rand(0, state.h),
-                    vx: rand(-0.25, 0.25),
-                    vy: rand(-0.25, 0.25),
-                    r: rand(1.2, 2.8),
-                    a: rand(0.12, 0.28),
+                    vx: rand(-0.15, 0.15),
+                    vy: rand(-0.15, 0.15),
+                    r: rand(1, 2),
+                    a: rand(0.12, 0.22),
                     c: pickColor()
                 });
             };
@@ -137,32 +214,42 @@ document.addEventListener('DOMContentLoaded', () => {
             resize();
 
             let rafId = 0;
-            const draw = () => {
+            let lastTime = 0;
+            const fps = 30; // Cap at 30fps for performance
+            const interval = 1000 / fps;
+
+            const draw = (timestamp) => {
+                if (timestamp - lastTime < interval) {
+                    rafId = requestAnimationFrame(draw);
+                    return;
+                }
+                lastTime = timestamp;
+
                 ctx.clearRect(0, 0, state.w, state.h);
                 ctx.save();
                 ctx.globalCompositeOperation = 'lighter';
 
                 // Update + draw particles
                 for (const p of state.particles) {
-                    // Gentle mouse interaction (subtle)
+                    // Simplified mouse interaction
                     if (state.mouse.active) {
                         const dx = p.x - state.mouse.x;
                         const dy = p.y - state.mouse.y;
                         const dist2 = dx * dx + dy * dy;
-                        if (dist2 < 140 * 140) {
+                        if (dist2 < 100 * 100) {
                             const dist = Math.sqrt(dist2) || 1;
-                            const push = (140 - dist) / 140;
-                            p.vx += (dx / dist) * push * 0.015;
-                            p.vy += (dy / dist) * push * 0.015;
+                            const push = (100 - dist) / 100;
+                            p.vx += (dx / dist) * push * 0.01;
+                            p.vy += (dy / dist) * push * 0.01;
                         }
                     }
 
                     p.x += p.vx;
                     p.y += p.vy;
 
-                    // Soft damping to keep it calm
-                    p.vx *= 0.985;
-                    p.vy *= 0.985;
+                    // Soft damping
+                    p.vx *= 0.99;
+                    p.vy *= 0.99;
 
                     // Wrap edges
                     if (p.x < -10) p.x = state.w + 10;
@@ -175,17 +262,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
                     ctx.fill();
 
-                    // Tiny colored glow
+                    // Simplified glow
                     ctx.beginPath();
                     ctx.fillStyle = p.c;
-                    ctx.globalAlpha = 0.06;
-                    ctx.arc(p.x, p.y, p.r * 6.5, 0, Math.PI * 2);
+                    ctx.globalAlpha = 0.05;
+                    ctx.arc(p.x, p.y, p.r * 4, 0, Math.PI * 2);
                     ctx.fill();
                     ctx.globalAlpha = 1;
                 }
 
-                // Link lines between close particles
-                const maxLinkDist = 130;
+                // Link lines between close particles - slightly increased for better visual
+                const maxLinkDist = 110;
                 for (let i = 0; i < state.particles.length; i++) {
                     for (let j = i + 1; j < state.particles.length; j++) {
                         const a = state.particles[i];
@@ -196,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (d < maxLinkDist) {
                             const t = 1 - d / maxLinkDist;
                             ctx.strokeStyle = `rgba(56,189,248,${0.08 * t})`;
-                            ctx.lineWidth = 1;
+                            ctx.lineWidth = 0.5;
                             ctx.beginPath();
                             ctx.moveTo(a.x, a.y);
                             ctx.lineTo(b.x, b.y);
@@ -227,99 +314,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-
-    // Custom Cursor Logic (only for fine pointer + non-reduced motion)
-    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const finePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
-
-    if (!reduceMotion && finePointer) {
-        const cursorDot = document.querySelector('.cursor-dot');
-        const cursorOutline = document.querySelector('.cursor-outline');
-        const glow = document.querySelector('.cursor-glow');
-
-        let mouseX = 0;
-        let mouseY = 0;
-        let outlineX = 0;
-        let outlineY = 0;
-        let glowX = 0;
-        let glowY = 0;
-
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-
-            // Update dot as well
-            if (cursorDot) {
-                cursorDot.style.left = mouseX + 'px';
-                cursorDot.style.top = mouseY + 'px';
-            }
-        });
-
-        // Lerp (Linear Interpolation) for smooth outline following
-        let speed = 0;
-        let angle = 0;
-        let scale = 1;
-
-        const animateCursor = () => {
-            const lerp = (start, end, factor) => start + (end - start) * factor;
-
-            // Calculate velocity and direction
-            const deltaX = mouseX - outlineX;
-            const deltaY = mouseY - outlineY;
-
-            outlineX = lerp(outlineX, mouseX, 0.15);
-            outlineY = lerp(outlineY, mouseY, 0.15);
-
-            // Velocity magnitude for stretching
-            const dist = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-            speed = lerp(speed, dist, 0.15);
-
-            // Rotate towards movement direction
-            if (dist > 0.1) {
-                angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
-            }
-
-            // Dynamic scale based on speed (stretching effect)
-            scale = 1 + (speed / 150); // Adjust divisor for intensity
-            const scaleY = 1 / scale; // Squish slightly while stretching
-
-            if (cursorOutline) {
-                cursorOutline.style.left = outlineX + 'px';
-                cursorOutline.style.top = outlineY + 'px';
-
-                // Apply rotation and scale
-                let hoverScale = 1;
-                if (document.body.classList.contains('cursor-hover')) {
-                    hoverScale = 1.5;
-                }
-
-                cursorOutline.style.transform = `translate(-50%, -50%) rotate(${angle}deg) scale(${scale * hoverScale}, ${scaleY * hoverScale})`;
-            }
-
-            // Smoothed Glow Update
-            if (glow) {
-                glowX = lerp(glowX, mouseX, 0.04); // Even slower than outline
-                glowY = lerp(glowY, mouseY, 0.04);
-                glow.style.left = glowX + 'px';
-                glow.style.top = glowY + 'px';
-            }
-
-            requestAnimationFrame(animateCursor);
-        };
-        animateCursor();
-    }
-
-    // Hover effect for interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .btn, .mobile-menu-btn, .contact-item');
-
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            document.body.classList.add('cursor-hover');
-        });
-        el.addEventListener('mouseleave', () => {
-            document.body.classList.remove('cursor-hover');
-        });
-    });
 
     // Back to top
     const backToTop = document.getElementById('back-to-top');
