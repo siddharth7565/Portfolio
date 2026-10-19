@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth Circle Cursor
     const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
-    const isDesktop = window.innerWidth >= 969;
+    const isDesktop = window.innerWidth >= 769;
 
     if (!reduceMotion && finePointer && isDesktop) {
         const customCursor = document.querySelector('.custom-cursor');

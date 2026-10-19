@@ -27,7 +27,7 @@
     --bg-card: rgba(255, 255, 255, 0.9);
     --text-white: #0f172a;
     /* Deep Navy text */
-    --text-dim: #334155;
+    --text-dim: #475569;
     --border: rgba(0, 0, 0, 0.08);
     --primary: #0ea5e9;
     --primary-light: #38bdf8;
@@ -101,7 +101,7 @@ body {
 }
 
 /* Enable custom cursor on desktop with fine pointer */
-@media (min-width: 969px) and (pointer: fine) and (not (prefers-reduced-motion: reduce)) {
+@media (min-width: 769px) and (pointer: fine) and (not (prefers-reduced-motion: reduce)) {
     .custom-cursor {
         display: block;
     }
@@ -505,9 +505,9 @@ h3,
     margin: auto auto;
     padding: 0 3rem;
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: 1.2fr 0.8fr;
     align-items: center;
-    gap: 4.5rem;
+    gap: 4rem;
 }
 
 .hero-background-text {
@@ -521,13 +521,13 @@ h3,
     letter-spacing: 0.35em;
     text-transform: uppercase;
     font-size: clamp(1.8rem, 4vw, 2.4rem);
-    color: rgba(148, 163, 184, 0.22);
+    color: rgba(148, 163, 184, 0.45);
     mix-blend-mode: screen;
     text-align: center;
 }
 
 .light-mode .hero-background-text {
-    color: rgba(71, 85, 105, 0.25);
+    color: rgba(71, 85, 105, 0.5);
     mix-blend-mode: multiply;
 }
 
@@ -745,8 +745,8 @@ h3,
 /* Profile Photo Container */
 .profile-photo-container {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 380px;
+    height: 380px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -796,8 +796,8 @@ h3,
 }
 
 .profile-image {
-    width: 320px;
-    height: 320px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(129, 140, 248, 0.15));
     border: 3px solid var(--primary);
@@ -1824,6 +1824,23 @@ footer {
 }
 
 /* Responsive */
+@media (max-width: 1280px) {
+    .hero-container {
+        grid-template-columns: 1fr 0.9fr;
+        gap: 3.5rem;
+    }
+
+    .profile-photo-container {
+        width: 360px;
+        height: 360px;
+    }
+
+    .profile-image {
+        width: 285px;
+        height: 285px;
+    }
+}
+
 @media (max-width: 1024px) {
     .hero-container {
         grid-template-columns: 1fr 0.9fr;
@@ -2068,6 +2085,43 @@ footer {
     }
 }
 
+@media (max-width: 375px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .hero-main-tagline {
+        font-size: 1.1rem;
+    }
+
+    .hero-intro {
+        font-size: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.15rem;
+    }
+
+    .profile-photo-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .profile-image {
+        width: 160px;
+        height: 160px;
+    }
+
+    .hero-btns .btn {
+        font-size: 1rem;
+        padding: 0.9rem 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-container {
         grid-template-columns: 1fr;
@@ -2088,10 +2142,30 @@ footer {
         width: 205px;
         height: 205px;
     }
+
+    .hero-content h1 {
+        font-size: clamp(2.2rem, 6vw, 3rem);
+    }
+
+    .hero-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .hero-main-tagline {
+        font-size: 1.25rem;
+    }
+
+    .hero-intro {
+        font-size: 1.15rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
 }
 
 /* Disable custom cursor on touch + reduce motion */
-@media (max-width: 968px),
+@media (max-width: 768px),
 (pointer: coarse),
 (prefers-reduced-motion: reduce) {
     #bg-canvas {
