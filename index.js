@@ -472,4 +472,89 @@ document.addEventListener('DOMContentLoaded', () => {
             item.style.setProperty('--y', `${y}px`);
         });
     });
+
+    // --- Resume Modal ---
+    const resumeModal = document.getElementById('resume-modal');
+    const heroResumeBtn = document.getElementById('hero-resume-btn');
+    const navResumeBtn = document.getElementById('nav-resume-btn');
+    const modalClose = document.querySelector('.modal-close');
+    const modalOverlay = document.querySelector('.modal-overlay');
+    const resumeIframe = document.querySelector('.resume-iframe');
+    const resumeFallback = document.querySelector('.resume-fallback');
+
+    const openModal = (e) => {
+        if (e) e.preventDefault();
+        resumeModal.classList.add('active');
+        resumeModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+
+        // Check if iframe loads or show fallback on mobile
+        if (window.innerWidth < 768) {
+            showFallback();
+        } else {
+            showIframe();
+        }
+    };
+
+    const closeModal = () => {
+        resumeModal.classList.remove('active');
+        resumeModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+    };
+
+    const showIframe = () => {
+        resumeIframe.style.display = 'block';
+        resumeFallback.style.display = 'none';
+    };
+
+    const showFallback = () => {
+        resumeIframe.style.display = 'none';
+        resumeFallback.style.display = 'flex';
+    };
+
+    // Handle iframe load error
+    if (resumeIframe) {
+        resumeIframe.addEventListener('error', showFallback);
+    }
+
+    // Open modal on button clicks
+    if (heroResumeBtn) {
+        heroResumeBtn.addEventListener('click', openModal);
+    }
+
+    if (navResumeBtn) {
+        navResumeBtn.addEventListener('click', openModal);
+    }
+
+    // Close modal on close button
+    if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+    }
+
+    // Close modal on overlay click
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', closeModal);
+    }
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && resumeModal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    // Handle window resize for iframe/fallback
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            if (resumeModal.classList.contains('active')) {
+                if (window.innerWidth < 768) {
+                    showFallback();
+                } else {
+                    showIframe();
+                }
+            }
+        }, 250);
+    });
 });

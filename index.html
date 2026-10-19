@@ -48,7 +48,7 @@
                 <a href="#projects">Projects</a>
                 <a href="#experience">Experience</a>
                 <a href="#profiles">Profiles</a>
-                <a href="Siddharth_Upadhayay.pdf?v=2" download="Siddharth_Upadhayay_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                <a href="#resume-modal" id="nav-resume-btn" aria-label="View resume">Resume</a>
                 <a href="#contact">Contact</a>
             </div>
             <div class="nav-controls">
@@ -85,7 +85,7 @@
                     </div>
                     <div class="hero-btns reveal-text delay-3">
                         <a href="#projects" class="btn primary">View Projects</a>
-                        <a href="Siddharth_Upadhayay.pdf?v=2" download="Siddharth_Upadhayay_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary"><i class="fas fa-download"></i> Download Resume</a>
+                        <a href="#resume-modal" id="hero-resume-btn" class="btn secondary" aria-label="View resume"><i class="fas fa-eye"></i> View Resume</a>
                         <a href="https://github.com/siddharth7565" target="_blank" class="btn secondary"><i class="fab fa-github"></i> GitHub</a>
                     </div>
                 </div>
@@ -451,6 +451,45 @@
     <button id="back-to-top" aria-label="Back to top" title="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    <!-- Resume Modal -->
+    <div id="resume-modal" class="resume-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title">
+        <div class="modal-overlay" tabindex="-1"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close resume viewer">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h2 id="resume-modal-title">Resume</h2>
+                <div class="modal-actions">
+                    <a href="Siddharth_Upadhayay.pdf?v=2" download="Siddharth_Upadhayay_Resume.pdf" class="btn primary" aria-label="Download resume PDF">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                    <a href="Siddharth_Upadhayay.pdf?v=2" target="_blank" rel="noopener noreferrer" class="btn secondary" aria-label="Open resume in new tab">
+                        <i class="fas fa-external-link-alt"></i> Open in New Tab
+                    </a>
+                </div>
+            </div>
+            <div class="modal-body">
+                <iframe src="Siddharth_Upadhayay.pdf?v=2#toolbar=0&view=FitH" class="resume-iframe" title="Resume PDF viewer"></iframe>
+                <div class="resume-fallback" style="display: none;">
+                    <div class="fallback-card">
+                        <i class="fas fa-file-pdf fallback-icon"></i>
+                        <h3>Resume Preview</h3>
+                        <p>Your browser doesn't support inline PDF viewing. Use the buttons below to view or download the resume.</p>
+                        <div class="fallback-actions">
+                            <a href="Siddharth_Upadhayay.pdf?v=2" target="_blank" rel="noopener noreferrer" class="btn primary">
+                                <i class="fas fa-external-link-alt"></i> Open in New Tab
+                            </a>
+                            <a href="Siddharth_Upadhayay.pdf?v=2" download="Siddharth_Upadhayay_Resume.pdf" class="btn secondary">
+                                <i class="fas fa-download"></i> Download Resume
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="index.js"></script>
 </body>
