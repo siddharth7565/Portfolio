@@ -512,19 +512,19 @@ h3,
 
 .hero-background-text {
     position: absolute;
-    inset: 18% 0 auto 0;
+    inset: 24% 0 auto 0;
     display: flex;
     justify-content: center;
     pointer-events: none;
     font-family: 'Outfit', sans-serif;
     font-weight: 800;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    font-size: clamp(1.2rem, 2.8vw, 1.6rem);
-    color: rgba(148, 163, 184, 0.45);
+    font-size: clamp(0.85rem, 2vw, 1.15rem);
+    color: rgba(148, 163, 184, 0.35);
     mix-blend-mode: screen;
     text-align: center;
-    max-width: 90%;
+    max-width: 85%;
     margin: 0 auto;
 }
 
@@ -2124,9 +2124,10 @@ footer {
     }
 
     .hero-background-text {
-        inset: 22% 0 auto 0;
-        font-size: 0.95rem;
-        letter-spacing: 0.12em;
+        inset: 28% 0 auto 0;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        opacity: 0.7;
     }
 }
 
@@ -2172,9 +2173,10 @@ footer {
     }
 
     .hero-background-text {
-        inset: 20% 0 auto 0;
-        font-size: clamp(1rem, 2.5vw, 1.3rem);
-        letter-spacing: 0.15em;
+        inset: 26% 0 auto 0;
+        font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+        letter-spacing: 0.1em;
+        opacity: 0.8;
     }
 }
 
